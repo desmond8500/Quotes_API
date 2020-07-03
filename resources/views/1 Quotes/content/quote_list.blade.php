@@ -18,5 +18,8 @@
                 </tr>
             @endforeach
         </tbody>
+        <tfoot>
+            {{ $citations->links() }}
+        </tfoot>
     </table>
 </div>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/app.css')}} ">
-    <link rel="stylesheet" href="{{asset('libraries/select2/css/select2.min.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('libraries/select2/css/select2.min.css')}}"> --}}
     <title>Quotes</title>
 </head>
 <body class="bg-lavender">
@@ -16,7 +16,7 @@
     </div>
 
     <script src="{{ asset('js/app.js')}} "></script>
-    <script src="{{asset('libraries/select2/js/select2.min.js')}}"></script>
-    <script src="{{asset('libraries/select2/config.js')}}"></script>
+    {{-- <script src="{{asset('libraries/select2/js/select2.min.js')}}"></script> --}}
+    {{-- <script src="{{asset('libraries/select2/config.js')}}"></script> --}}
 </body>
 </html>

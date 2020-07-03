@@ -26,7 +26,7 @@
     <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="{{route('home')}}">
         <img class="navbar-brand-full" src="http://infyom.com/images/logo/blue_logo_150x150.jpg" width="30" height="30"
              alt="InfyOm Logo">
         <img class="navbar-brand-minimized" src="http://infyom.com/images/logo/blue_logo_150x150.jpg" width="30"
@@ -35,6 +35,8 @@
     <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
         <span class="navbar-toggler-icon"></span>
     </button>
+    <a href="{{route('index')}}" class="btn btn-primary mr-2">Index</a>
+    <a href="{{route('io_generator_builder')}}" class="btn btn-success">Generator Builder</a>
 
     <ul class="nav navbar-nav ml-auto">
         <li class="nav-item d-md-down-none">

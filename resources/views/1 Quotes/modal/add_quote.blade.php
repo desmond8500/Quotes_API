@@ -29,8 +29,16 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label>Tags</label>
-                        <select name="tag[]" multiple class="form-control select2">
-                            <option value=" ">test</option>
+
+                        @php
+                            $t[] = null;
+                            foreach ($tags as $key => $tag) {
+                                array_push($t, array('id' => $tag->id, 'text'=>$tag->name));
+                            }
+                            echo "<script> var data = ".json_encode($t)." </script>";
+                        @endphp
+
+                        <select name="tag[]" multiple class="form-control select2" style="width: 100%">
                         </select>
                     </div>
                 </div>

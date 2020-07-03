@@ -17,8 +17,8 @@
             Config
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{{route('home')}}">Home</a>
-            <a class="dropdown-item" href="{{route('io_generator_builder')}}">Generator Builder</a>
+            <a class="dropdown-item" href="{{route('home')}}" target="_blank">Home</a>
+            <a class="dropdown-item" href="{{route('io_generator_builder')}}" target="_blank">Generator Builder</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Something else here</a>
             </div>

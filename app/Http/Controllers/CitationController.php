@@ -54,6 +54,7 @@ class CitationController extends AppBaseController
      */
     public function store(CreateCitationRequest $request)
     {
+        $request->tag = json_encode($request->tag);
         $input = $request->all();
 
         $citation = $this->citationRepository->create($input);
@@ -113,6 +114,7 @@ class CitationController extends AppBaseController
      */
     public function update($id, UpdateCitationRequest $request)
     {
+        $request->tag = json_encode($request->tag);
         $citation = $this->citationRepository->find($id);
 
         if (empty($citation)) {
