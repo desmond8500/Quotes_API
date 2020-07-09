@@ -20,5 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::resource('citations', 'CitationAPIController');
+Route::get('quote', 'CitationAPIController@getQuote');
 
 Route::resource('tags', 'TagAPIController');

@@ -128,4 +128,14 @@ class CitationAPIController extends AppBaseController
 
         return $this->sendSuccess('Citation deleted successfully');
     }
+
+    public function getQuote()
+    {
+        $random = random_int(1, Citation::count());
+        $quote = Citation::find($random);
+
+
+
+        return $this->sendResponse($quote, 'Citation envoyée');
+    }
 }

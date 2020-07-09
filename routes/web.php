@@ -11,6 +11,7 @@ Auth::routes(['verify' => true]);
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('index', 'QuoteController@index')->middleware('auth')->name('index');
+Route::get('quote', 'QuoteController@getQuote');
 
 
 Route::get('generator_builder', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@builder')->name('io_generator_builder');

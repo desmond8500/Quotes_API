@@ -13,13 +13,15 @@ En mode dev
 git clone https://github.com/desmond8500/Quotes_API.git
 composer install
 npm install
-touch database/database.sqlite
 cp .env.example .env
 php artisan key:generate
 php artisan storage:link
 php artisan migrate
 ```
 
+## API 
+
+Récupérer une citatinon : [http://quotesapi.yonkou.info/api/quote](http://quotesapi.yonkou.info/api/quote)
 
 ## Tools 
 

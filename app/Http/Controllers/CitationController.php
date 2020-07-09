@@ -6,6 +6,7 @@ use App\Http\Requests\CreateCitationRequest;
 use App\Http\Requests\UpdateCitationRequest;
 use App\Repositories\CitationRepository;
 use App\Http\Controllers\AppBaseController;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
@@ -54,8 +55,20 @@ class CitationController extends AppBaseController
      */
     public function store(CreateCitationRequest $request)
     {
-        $request->tag = json_encode($request->tag);
+        $tag_list[] = null;
+        foreach ($request->tag as $key => $tag) {
+            if (!is_numeric($tag)) {
+                $new_tag = new Tag();
+                $new_tag->name = $tag;
+                $new_tag->save();
+                $tag = $new_tag->id;
+            }
+            array_push($tag_list, $tag);
+        }
+        array_shift($tag_list);
+
         $input = $request->all();
+        $input['tag'] = json_encode($tag_list);
 
         $citation = $this->citationRepository->create($input);
 
