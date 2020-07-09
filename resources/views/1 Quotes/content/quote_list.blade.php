@@ -5,7 +5,7 @@
             <th scope="col">#</th>
             <th scope="col">Citation</th>
             <th scope="col">Auteur</th>
-            <th scope="col">Handle</th>
+            {{-- <th scope="col">Handle</th> --}}
             </tr>
         </thead>
         <tbody class="bg-light">
@@ -14,12 +14,12 @@
                     <th scope="row">{{ $key+1 }}</th>
                     <td>{{ $citation->quote}}</td>
                     <td>{{ $citation->author}}</td>
-                    <td>@mdo</td>
+                    {{-- <td>@mdo</td> --}}
                 </tr>
             @endforeach
         </tbody>
         <tfoot>
-            {{ $citations->links() }}
+            {{-- {{ $citations->links() }} --}}
         </tfoot>
     </table>
 </div>

@@ -56,16 +56,18 @@ class CitationController extends AppBaseController
     public function store(CreateCitationRequest $request)
     {
         $tag_list[] = null;
-        foreach ($request->tag as $key => $tag) {
-            if (!is_numeric($tag)) {
-                $new_tag = new Tag();
-                $new_tag->name = $tag;
-                $new_tag->save();
-                $tag = $new_tag->id;
+        if ($request->tag) {
+            foreach ($request->tag as $key => $tag) {
+                if (!is_numeric($tag)) {
+                    $new_tag = new Tag();
+                    $new_tag->name = $tag;
+                    $new_tag->save();
+                    $tag = $new_tag->id;
+                }
+                array_push($tag_list, $tag);
             }
-            array_push($tag_list, $tag);
+            array_shift($tag_list);
         }
-        array_shift($tag_list);
 
         $input = $request->all();
         $input['tag'] = json_encode($tag_list);
