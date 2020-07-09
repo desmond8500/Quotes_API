@@ -26,8 +26,7 @@ class QuoteController extends Controller
         $random = random_int(1, Citation::count());
         $quote = Citation::find($random);
 
-        dump($random);
 
-        return  response()->json($quote);
+        return  $quote->toJson(JSON_PRETTY_PRINT);
     }
 }
