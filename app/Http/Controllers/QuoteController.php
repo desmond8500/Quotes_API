@@ -29,4 +29,15 @@ class QuoteController extends Controller
 
         return  $quote->toJson(JSON_PRETTY_PRINT);
     }
+
+    public function editQuote($id){
+        $quote = Citation::find($id);
+        return  view("1 Quotes.content.quote_edit", compact('quote'));
+    }
+
+    public function deleteQuote($id){
+        $quote = Citation::find($id);
+        $quote->delete();
+        return  redirect()->route('index');
+    }
 }
