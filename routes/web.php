@@ -12,6 +12,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('index', 'QuoteController@index')->middleware('auth')->name('index');
 Route::get('quote', 'QuoteController@getQuote');
+Route::get('quote/edit/{id?}', 'QuoteController@EditQuote')->name('quote.edit');
+Route::get('quote/delete/{id?}', 'QuoteController@DeleteQuote')->name('quote.delete');
 
 
 Route::get('generator_builder', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@builder')->name('io_generator_builder');

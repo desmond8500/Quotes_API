@@ -31,6 +31,7 @@ class QuoteController extends Controller
         return  $quote->toJson(JSON_PRETTY_PRINT);
     }
 
+<<<<<<< HEAD
     public static function getTags($tags){
 
         if (!$tags) {
@@ -45,5 +46,16 @@ class QuoteController extends Controller
         $tags = "<script> var data = " . json_encode($tag_array) . " </script>";
 
         return  $tags;
+=======
+    public function editQuote($id){
+        $quote = Citation::find($id);
+        return  view("1 Quotes.content.quote_edit", compact('quote'));
+    }
+
+    public function deleteQuote($id){
+        $quote = Citation::find($id);
+        $quote->delete();
+        return  redirect()->route('index');
+>>>>>>> 06a6b3178042b038c2185a235f0e76919ecb315f
     }
 }
