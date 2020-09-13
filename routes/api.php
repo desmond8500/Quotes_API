@@ -23,3 +23,6 @@ Route::resource('citations', 'CitationAPIController');
 Route::get('quote', 'CitationAPIController@getQuote');
 
 Route::resource('tags', 'TagAPIController');
+
+
+Route::resource('films', 'FilmAPIController');

@@ -56,6 +56,7 @@ class CitationController extends AppBaseController
     public function store(CreateCitationRequest $request)
     {
         $tag_list[] = null;
+
         if ($request->tag) {
             foreach ($request->tag as $key => $tag) {
                 if (!is_numeric($tag)) {
@@ -71,6 +72,8 @@ class CitationController extends AppBaseController
 
         $input = $request->all();
         $input['tag'] = json_encode($tag_list);
+
+        // dd($tag_list);
 
         $citation = $this->citationRepository->create($input);
 

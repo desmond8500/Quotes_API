@@ -10,3 +10,9 @@
         <span>Tags</span>
     </a>
 </li>
+<li class="nav-item {{ Request::is('films*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('films.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>Films</span>
+    </a>
+</li>

@@ -25,3 +25,6 @@ Route::post('generator_builder/generate-from-file','\InfyOm\GeneratorBuilder\Con
 Route::resource('citations', 'CitationController');
 
 Route::resource('tags', 'TagController');
+
+
+Route::resource('films', 'FilmController');

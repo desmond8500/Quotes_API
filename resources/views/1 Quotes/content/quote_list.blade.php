@@ -5,7 +5,7 @@
             <th scope="col">#</th>
             <th scope="col">Citation</th>
             <th scope="col">Auteur</th>
-            {{-- <th scope="col">Handle</th> --}}
+            <th scope="col">Editer</th>
             </tr>
         </thead>
         <tbody class="bg-light">
@@ -14,7 +14,9 @@
                     <th scope="row">{{ $key+1 }}</th>
                     <td>{{ $citation->quote}}</td>
                     <td>{{ $citation->author}}</td>
-                    {{-- <td>@mdo</td> --}}
+                    <td>
+                        @include('1 Quotes.modal.edit_quote')
+                    </td>
                 </tr>
             @endforeach
         </tbody>

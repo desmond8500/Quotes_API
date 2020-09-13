@@ -6,6 +6,7 @@ use App\Models\Citation;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 
+
 class QuoteController extends Controller
 {
     public function index(){
@@ -28,5 +29,21 @@ class QuoteController extends Controller
 
 
         return  $quote->toJson(JSON_PRETTY_PRINT);
+    }
+
+    public static function getTags($tags){
+
+        if (!$tags) {
+            return null;
+        }
+
+        $tag_array[] = null;
+        foreach (json_decode($tags) as $key => $tag) {
+            $my_tag = Tag::find($tag);
+            array_push($tag_array, array('id' => $my_tag->id, 'text' => $my_tag->name));
+        }
+        $tags = "<script> var data = " . json_encode($tag_array) . " </script>";
+
+        return  $tags;
     }
 }
